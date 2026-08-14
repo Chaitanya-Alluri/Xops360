@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback, memo } from 'react';
-import { Menu, X } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
+import { useState, useEffect, useCallback } from 'react';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import { scrollToSection as scrollTo } from '../utils/scrollHelpers';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,7 +11,7 @@ export default function Navigation() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['hero', 'platform', 'features', 'casestudies', 'contact'];
+      const sections = ['hero', 'platform', 'remediation', 'features', 'solutions', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -26,148 +26,123 @@ export default function Navigation() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = useCallback((sectionId: string) => {
-    if (sectionId === 'hero') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const offset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    }
+    scrollTo(sectionId);
     setIsMobileMenuOpen(false);
   }, []);
 
   const navLinks = [
     { id: 'platform', label: 'Platform' },
-    { id: 'features', label: 'Features' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'remediation', label: 'Remediation' },
+    { id: 'features', label: 'Capabilities' },
+    { id: 'solutions', label: 'Solutions' },
   ];
 
   return (
     <nav
-      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-gray-100 dark:border-slate-800'
-          : 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-100 dark:border-slate-800'
+      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg border-b border-gray-200 ${
+        isScrolled ? 'shadow-md' : ''
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative flex items-center h-20">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden flex items-center justify-center p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            style={{ minWidth: '44px', minHeight: '44px' }}
-            aria-label="Toggle mobile menu"
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Equal 1fr side columns keep the nav links optically centred
+            regardless of the logo / CTA widths. */}
+        <div className="flex items-center justify-between py-3 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-6">
           <button
             onClick={() => scrollToSection('hero')}
-            className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg transition-transform duration-300 hover:scale-105"
+            className="flex items-center lg:justify-self-start focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg"
             aria-label="Scroll to top"
           >
             <img
-              src="/Logo_Colored_v1.png"
-              alt="Xops360 Logo"
-              className="h-14 lg:h-16 w-auto"
+              src="/Logo_Colored_v1_trimmed.png"
+              alt="Xops360"
+              className="h-9 md:h-10 w-auto"
             />
           </button>
 
-          <div className="hidden lg:flex items-center gap-1 ml-12">
+          <div className="hidden lg:flex items-center justify-center space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`nav-link-underline smooth-color-transition font-medium text-sm px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                className={`relative text-sm font-medium transition-colors duration-200 focus:outline-none rounded px-1 py-2.5 group ${
                   activeSection === link.id
-                    ? 'text-gray-900 bg-gray-100'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    ? 'text-blue-600'
+                    : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {link.label}
+                <span
+                  className={`absolute -bottom-0.5 left-0 h-0.5 bg-gradient-to-r from-blue-800 to-teal-700 transition-all duration-300 ${
+                    activeSection === link.id ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
               </button>
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3 ml-auto">
-            <ThemeToggle />
+          <div className="hidden lg:flex items-center justify-end space-x-4">
             <a
-              href="https://xops.axiomio.com/"
+              href="https://console.xops360.ai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-200 px-4 py-2 rounded-full hover:bg-gray-50 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 active:scale-95"
+              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-3 py-2"
             >
               Sign In
             </a>
-            <a
-              href="https://xops.axiomio.com/?requestAcc=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ripple hover-glow inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold text-sm px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 active:scale-95"
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="group px-6 py-2.5 bg-gradient-animated text-white text-sm font-semibold rounded-lg hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center gap-2"
             >
-              Start Free Trial
-            </a>
+              Request a Demo
+              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
 
-          <div className="lg:hidden w-11"></div>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2 text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-2">
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+          <div className="px-6 py-4 space-y-2">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`block w-full text-left font-medium text-base px-4 py-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                className={`block w-full text-left px-3 py-2 rounded-lg font-medium transition-colors ${
                   activeSection === link.id
                     ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:bg-gray-50 active:bg-gray-100'
+                    : 'text-gray-700 hover:bg-gray-50'
                 }`}
-                style={{ minHeight: '44px' }}
               >
                 {link.label}
               </button>
             ))}
-
-            <div className="pt-2 border-t border-gray-100 mt-4 space-y-2">
-              <a
-                href="https://xops.axiomio.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center text-gray-700 font-medium text-base px-4 py-3 rounded-lg hover:bg-gray-50 active:bg-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                style={{ minHeight: '44px' }}
-              >
-                Sign In
-              </a>
-              <a
-                href="https://xops.axiomio.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold text-base px-6 py-3 rounded-lg shadow-md active:scale-98 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                style={{ minHeight: '44px' }}
-              >
-                Start Free Trial
-              </a>
-            </div>
+            <a
+              href="https://console.xops360.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-left px-3 py-2 text-gray-700 font-medium hover:bg-gray-50 rounded-lg"
+            >
+              Sign In
+            </a>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="w-full px-6 py-3 bg-gradient-animated text-white font-semibold rounded-lg shadow-md"
+            >
+              Request a Demo
+            </button>
           </div>
         </div>
       )}

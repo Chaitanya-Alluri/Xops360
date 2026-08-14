@@ -1,111 +1,81 @@
-import { Plug, Eye, Zap, Repeat, ArrowRight } from 'lucide-react';
+import { Plug, Eye, Zap, Repeat } from 'lucide-react';
 
 export default function HowItWorks() {
   const steps = [
     {
       number: 1,
-      gradient: 'from-blue-500 to-blue-600',
+      gradient: 'from-blue-600 to-blue-800',
       icon: Plug,
-      bgColor: 'bg-blue-50',
-      iconColor: 'text-blue-600',
+      iconColor: 'text-blue-700',
       title: 'Connect',
-      description: 'Plug in your cloud accounts with secure, read-only access in minutes.'
+      description: 'Plug in your cloud accounts with secure, read-only access.'
     },
     {
       number: 2,
-      gradient: 'from-teal-500 to-teal-600',
+      gradient: 'from-teal-600 to-teal-800',
       icon: Eye,
-      bgColor: 'bg-teal-50',
-      iconColor: 'text-teal-600',
+      iconColor: 'text-teal-700',
       title: 'Observe',
       description: 'Xops360 builds a 360° view of cost, risk, and compliance posture.'
     },
     {
       number: 3,
-      gradient: 'from-green-500 to-green-600',
+      gradient: 'from-emerald-600 to-emerald-700',
       icon: Zap,
-      bgColor: 'bg-green-50',
-      iconColor: 'text-green-600',
-      title: 'Optimize',
+      iconColor: 'text-emerald-600',
+      title: 'Optimise',
       description: 'Use AI-driven insights to right-size resources, remove waste, and fix vulnerabilities.'
     },
     {
       number: 4,
-      gradient: 'from-orange-500 to-orange-600',
+      gradient: 'from-slate-600 to-slate-800',
       icon: Repeat,
-      bgColor: 'bg-orange-50',
-      iconColor: 'text-orange-600',
+      iconColor: 'text-slate-700',
       title: 'Continuously Improve',
-      description: 'Keep your environment optimized and audit-ready with ongoing reviews and alerts.'
+      description: 'Keep your environment optimised and audit-ready with ongoing reviews and alerts.'
     }
   ];
 
   return (
     <section
       id="howitworks"
-      className="py-16 md:py-20 px-6 bg-gradient-to-b from-white to-gray-50 dark:from-slate-950 dark:to-slate-900 transition-colors duration-300"
+      className="py-12 md:py-16 px-4 md:px-6 bg-white"
       style={{ scrollMarginTop: '80px' }}
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight" style={{ lineHeight: '1.2' }}>
-            <span className="text-gray-900 dark:text-slate-100">How Xops360 </span>
-            <span className="bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 bg-clip-text text-transparent">Fits Into Your Stack</span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-slate-400 max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
-            Four simple steps to transform your cloud operations
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8 md:mb-10 lg:mb-12">
+          How Xops360 Fits Into Your Stack
+        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-6 md:gap-4 lg:gap-6">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <div
                 key={index}
-                className="relative group"
+                className="flex-1 text-center hover:scale-105 transition-all duration-300"
               >
-                <div className="card-hover smooth-color-transition h-full bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-slate-800 transition-all duration-300">
-                  <div className="flex flex-col h-full">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-lg`}>
-                        <span className="text-white text-xl font-bold">{step.number}</span>
-                      </div>
-                      <div className={`w-12 h-12 rounded-lg ${step.bgColor} flex items-center justify-center`}>
-                        <Icon className={`w-6 h-6 ${step.iconColor}`} />
-                      </div>
-                    </div>
-
-                    <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-slate-100 mb-3">
-                      {step.title}
-                    </h3>
-
-                    <p className="text-gray-600 dark:text-slate-400 text-base leading-relaxed flex-grow" style={{ lineHeight: '1.7' }}>
-                      {step.description}
-                    </p>
+                <div className="relative mb-4 md:mb-5">
+                  <div className={`w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 mx-auto rounded-full bg-gradient-to-br ${step.gradient} text-white text-2xl md:text-3xl font-bold flex items-center justify-center shadow-lg`}>
+                    {step.number}
                   </div>
+                  {index < steps.length - 1 && (
+                    <div className="hidden md:block absolute top-8 md:top-9 lg:top-10 left-1/2 w-full h-0.5 border-t-2 border-dashed border-gray-300"></div>
+                  )}
                 </div>
 
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:flex absolute top-10 -right-4 z-10 items-center justify-center">
-                    <ArrowRight className="w-8 h-8 text-gray-300" strokeWidth={2} />
-                  </div>
-                )}
+                <Icon className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 ${step.iconColor} mx-auto mb-3 md:mb-4`} />
+
+                <h3 className="text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-2">
+                  {step.title}
+                </h3>
+
+                <p className="text-sm md:text-base text-gray-600">
+                  {step.description}
+                </p>
               </div>
             );
           })}
-        </div>
-
-        <div className="mt-12 text-center">
-          <a
-            href="https://xops.axiomio.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950 active:scale-95" style={{ minHeight: '44px' }}
-          >
-            Get Started Today
-            <ArrowRight className="w-5 h-5" />
-          </a>
         </div>
       </div>
     </section>

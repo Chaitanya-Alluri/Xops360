@@ -1,81 +1,78 @@
-import { TrendingUp, ShieldAlert, Cloud, Server, CalendarX } from 'lucide-react';
+import { TrendingUp, ShieldAlert, Cloud, Server, CalendarX, Wrench } from 'lucide-react';
+import Reveal from './Reveal';
 
 export default function Problem() {
   const problems = [
     {
       icon: TrendingUp,
-      iconColor: 'text-red-500',
+      iconColor: 'text-slate-600',
       title: 'Unpredictable Cost Escalation',
       description: 'Cloud bills surge monthly with no transparent breakdown of spending drivers. Finance teams lack visibility into which services, teams, or workloads are consuming budget.'
     },
     {
       icon: ShieldAlert,
-      iconColor: 'text-orange-500',
+      iconColor: 'text-blue-700',
       title: 'Hidden Security Exposures',
-      description: 'Image vulnerabilities in cloud AMIs and ECR containers remain undetected until scheduled audits, creating critical security windows and compliance risks.'
+      description: 'Vulnerabilities in AMIs, ECR/ACR container images, and misconfigurations stay undetected until the next audit, creating long, silent risk windows.'
     },
     {
       icon: Cloud,
-      iconColor: 'text-amber-500',
+      iconColor: 'text-teal-700',
       title: 'Silent Budget Erosion',
       description: 'Idle instances, over-provisioned resources, and forgotten workloads continuously drain budget. Without real-time visibility, waste compounds across quarters.'
     },
     {
       icon: Server,
-      iconColor: 'text-blue-500',
-      title: 'The Multi-Account Challenge',
-      description: 'Distributed cloud environments spanning multiple accounts, regions, and services eliminate unified visibility. Teams operate reactively through disparate tools and manual processes.'
+      iconColor: 'text-blue-700',
+      title: 'Multi-Cloud Blind Spots',
+      description: 'Dozens of AWS accounts plus Azure, Microsoft 365, and Entra ID leave teams without unified visibility, operating reactively across disparate tools and consoles.'
     },
     {
       icon: CalendarX,
-      iconColor: 'text-orange-500',
-      title: 'Annual Reviews Aren\'t Enough',
-      description: 'Traditional cloud Well-Architected Reviews occur once yearly, leaving 364 days of potential inefficiencies unaddressed and optimization opportunities unrealized.',
-      fullWidth: true
+      iconColor: 'text-slate-600',
+      title: 'Compliance Is a Once-a-Year Fire Drill',
+      description: 'Annual Well-Architected and framework reviews leave 364 days of drift unaddressed, and re-checking CIS, PCI-DSS, GDPR, and SOC 2 separately multiplies the effort.'
+    },
+    {
+      icon: Wrench,
+      iconColor: 'text-teal-700',
+      title: 'Findings That Never Get Fixed',
+      description: 'Most tools surface problems but stop there. Without owners, SLAs, and a path into Jira or ServiceNow, insights pile up in a dashboard while the risk and the spend remain.'
     }
   ];
 
   return (
     <section
       id="challenge"
-      className="py-16 md:py-20 px-6 bg-gradient-to-b from-white via-gray-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300"
+      className="py-12 md:py-16 px-4 md:px-6 bg-gray-50"
       style={{ scrollMarginTop: '80px' }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6" style={{ lineHeight: '1.2' }}>
-            <span className="block font-semibold text-gray-600 dark:text-slate-400 mb-3">Tackling issues</span>
-            <span className="block bg-gradient-to-r from-blue-600 via-teal-500 to-blue-500 bg-clip-text text-transparent">before they become problems</span>
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-3 md:mb-4">
+            The Challenge We Solve
           </h2>
-
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-slate-400 max-w-4xl mx-auto" style={{ lineHeight: '1.7' }}>
-            Enterprise cloud environments face mounting pressure: <span className="font-semibold text-gray-700 dark:text-slate-300">costs escalate</span> without clear attribution, <span className="font-semibold text-gray-700 dark:text-slate-300">security vulnerabilities</span> go undetected, and <span className="font-semibold text-gray-700 dark:text-slate-300">operational complexity</span> obscures optimization opportunities.
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 text-center max-w-3xl mx-auto mb-8 md:mb-10">
+            Enterprise cloud teams juggle cost, security, and compliance across many clouds, through
+            disconnected tools that surface problems but rarely close them.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
           {problems.map((problem, index) => {
             const Icon = problem.icon;
             return (
-              <div
-                key={index}
-                className={`card-hover smooth-color-transition bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 ${
-                  problem.fullWidth ? 'md:col-span-2' : ''
-                }`}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${problem.iconColor.replace('text-', 'from-')}/10 ${problem.iconColor.replace('text-', 'to-')}/20 flex items-center justify-center`}>
-                    <Icon className={`w-7 h-7 ${problem.iconColor}`} />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold tracking-tight text-gray-900 dark:text-slate-100 flex-1 pt-2">
+              <Reveal key={index} delay={(index % 3) * 90}>
+                <div className="h-full bg-white rounded-lg md:rounded-xl p-5 md:p-6 lg:p-7 border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 transition-all duration-300">
+                  <Icon className={`w-10 h-10 md:w-11 md:h-11 ${problem.iconColor} mb-3 md:mb-4`} />
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">
                     {problem.title}
                   </h3>
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                    {problem.description}
+                  </p>
                 </div>
-                <p className="text-gray-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base" style={{ lineHeight: '1.7' }}>
-                  {problem.description}
-                </p>
-              </div>
+              </Reveal>
             );
           })}
         </div>
