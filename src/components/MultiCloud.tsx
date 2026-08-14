@@ -10,7 +10,7 @@ const clouds = [
 ];
 
 // SOC 2 first: it is the framework US enterprise buyers ask about in the first call.
-const frameworks = ['SOC 2', 'PCI-DSS', 'CIS', 'ISO 27001', 'GDPR'];
+const frameworks = ['SOC 2', 'HIPAA', 'PCI-DSS', 'ISO 27001', 'CIS'];
 
 export default function MultiCloud() {
   return (

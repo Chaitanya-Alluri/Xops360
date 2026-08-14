@@ -19,7 +19,7 @@ const personas = [
     audience: 'Security & GRC',
     headline: 'Continuous compliance, not annual panic.',
     points: [
-      'One scan across SOC 2, PCI-DSS, CIS, ISO 27001 & GDPR',
+      'One scan across SOC 2, HIPAA, PCI-DSS, ISO 27001 & CIS',
       'CVE-level workload scanning plus OSINT, DAST & network',
       'SCA on dependencies, wired into CI/CD',
       'Audit-ready posture score, every day',

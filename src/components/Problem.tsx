@@ -31,7 +31,7 @@ export default function Problem() {
       icon: CalendarX,
       iconColor: 'text-slate-600',
       title: 'Compliance Is a Once-a-Year Fire Drill',
-      description: 'Annual Well-Architected and framework reviews leave 364 days of drift unaddressed, and re-checking SOC 2, PCI-DSS, CIS, and ISO 27001 separately multiplies the effort.'
+      description: 'Annual Well-Architected and framework reviews leave 364 days of drift unaddressed, and re-checking SOC 2, HIPAA, PCI-DSS, and ISO 27001 separately multiplies the effort.'
     },
     {
       icon: Wrench,

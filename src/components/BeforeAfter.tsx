@@ -13,7 +13,7 @@ const rows = [
   },
   {
     before: 'Compliance is an annual, per-framework fire drill',
-    after: 'One continuous scan mapped to SOC 2, PCI-DSS, CIS, ISO 27001 & GDPR',
+    after: 'One continuous scan mapped to SOC 2, HIPAA, PCI-DSS, ISO 27001 & CIS',
   },
   {
     before: 'Open-source dependencies ship unchecked into production',
