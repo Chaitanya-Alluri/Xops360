@@ -23,7 +23,7 @@ export default function HowItWorks() {
       gradient: 'from-emerald-600 to-emerald-700',
       icon: Zap,
       iconColor: 'text-emerald-600',
-      title: 'Optimise',
+      title: 'Optimize',
       description: 'Use AI-driven insights to right-size resources, remove waste, and fix vulnerabilities.'
     },
     {
@@ -32,7 +32,7 @@ export default function HowItWorks() {
       icon: Repeat,
       iconColor: 'text-slate-700',
       title: 'Continuously Improve',
-      description: 'Keep your environment optimised and audit-ready with ongoing reviews and alerts.'
+      description: 'Keep your environment optimized and audit-ready with ongoing reviews and alerts.'
     }
   ];
 

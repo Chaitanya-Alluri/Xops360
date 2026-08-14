@@ -5,7 +5,7 @@ import AnimatedNumber from './AnimatedNumber';
 
 const stages = [
   { icon: Search, title: 'Detect', desc: 'Cost, security & compliance findings from every cloud', color: 'from-blue-600 to-blue-800' },
-  { icon: ListChecks, title: 'Triage', desc: 'Auto-prioritised by severity with an SLA clock', color: 'from-indigo-600 to-indigo-800' },
+  { icon: ListChecks, title: 'Triage', desc: 'Auto-prioritized by severity with an SLA clock', color: 'from-indigo-600 to-indigo-800' },
   { icon: Wrench, title: 'Remediate', desc: 'One-click fix, no console hopping', color: 'from-teal-600 to-teal-800' },
   { icon: GitBranch, title: 'Sync', desc: 'Pushed to Jira or ServiceNow with full context', color: 'from-slate-600 to-slate-800' },
   { icon: CheckCircle2, title: 'Resolved', desc: 'Closed, tracked, and proven for audit', color: 'from-emerald-600 to-emerald-700' },
@@ -113,7 +113,7 @@ export default function Remediation() {
               </div>
               <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm text-center">
                 <p className="text-2xl md:text-3xl font-bold text-red-500">
-                  AU$<AnimatedNumber value={3197} className="inline-block" />
+                  $<AnimatedNumber value={3197} className="inline-block" />
                 </p>
                 <p className="text-[11px] md:text-xs text-gray-500 mt-1">Monthly leakage</p>
               </div>
@@ -123,6 +123,7 @@ export default function Remediation() {
               <ul className="space-y-2.5 text-sm text-gray-600">
                 <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Security misconfigurations &amp; compliance failures</li>
                 <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Workload CVEs from AMI, ECR &amp; ACR scans</li>
+                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Vulnerable dependencies surfaced by SCA</li>
                 <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Cost leakage &amp; idle-resource waste</li>
                 <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Per-account governance score, leakage &amp; SLA breaches</li>
               </ul>
@@ -168,7 +169,7 @@ export default function Remediation() {
                 </div>
                 <div className="rounded-xl border border-green-100 bg-green-50/60 p-3 flex items-center gap-2">
                   <CheckCircle2 size={16} className="text-green-600 flex-shrink-0" />
-                  <p className="text-sm text-gray-700">17 idle EC2 instances right-sized · <span className="font-semibold text-green-700">AU$4,200/mo saved</span></p>
+                  <p className="text-sm text-gray-700">17 idle EC2 instances right-sized · <span className="font-semibold text-green-700">$4,200/mo saved</span></p>
                 </div>
               </div>
             </div>

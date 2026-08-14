@@ -45,10 +45,10 @@ export default function Platform() {
                     </div>
                   </div>
                   <p className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1 md:mb-2">
-                    AU$<AnimatedNumber value={847} className="inline-block" />K
+                    $<AnimatedNumber value={847} className="inline-block" />K
                   </p>
                   <p className="text-xs md:text-sm text-green-600 font-semibold">
-                    <AnimatedNumber value={22} suffix="%" prefix="-" className="inline-block" /> Optimised
+                    <AnimatedNumber value={22} suffix="%" prefix="-" className="inline-block" /> Optimized
                   </p>
                 </div>
 
@@ -96,7 +96,7 @@ export default function Platform() {
 
               <div className="mt-3 md:mt-4 lg:mt-6 p-3 md:p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <p className="text-xs md:text-sm text-blue-900">
-                  <span className="font-semibold">AI Insight:</span> <AnimatedNumber value={15} className="inline-block" /> idle EC2 instances detected. Estimated monthly savings: AU$<AnimatedNumber value={4200} className="inline-block" />
+                  <span className="font-semibold">AI Insight:</span> <AnimatedNumber value={15} className="inline-block" /> idle EC2 instances detected. Estimated monthly savings: $<AnimatedNumber value={4200} className="inline-block" />
                 </p>
               </div>
             </div>

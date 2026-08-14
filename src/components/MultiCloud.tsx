@@ -9,7 +9,8 @@ const clouds = [
   { label: 'EKS', sub: 'Kubernetes clusters', color: 'bg-teal-600' },
 ];
 
-const frameworks = ['CIS', 'PCI-DSS', 'GDPR', 'SOC 2', 'ISO 27001'];
+// SOC 2 first: it is the framework US enterprise buyers ask about in the first call.
+const frameworks = ['SOC 2', 'PCI-DSS', 'CIS', 'ISO 27001', 'GDPR'];
 
 export default function MultiCloud() {
   return (
@@ -34,10 +35,11 @@ export default function MultiCloud() {
             Connect accounts once with read-only access and see cost, risk, and compliance side by side.
           </p>
           <p className="text-sm text-gray-500 mt-3">
-            Covers your Australian regions, including{' '}
-            <span className="font-medium text-gray-600">AWS ap-southeast-2 (Sydney)</span> and{' '}
-            <span className="font-medium text-gray-600">Azure Australia East / Southeast</span>, alongside
-            every other region you run in.
+            Covers your US regions, including{' '}
+            <span className="font-medium text-gray-600">AWS us-east-1 (N. Virginia)</span> and{' '}
+            <span className="font-medium text-gray-600">us-west-2 (Oregon)</span>, plus{' '}
+            <span className="font-medium text-gray-600">Azure East US / West US</span>, alongside every
+            other region you run in.
           </p>
         </Reveal>
 

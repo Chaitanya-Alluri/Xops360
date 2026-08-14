@@ -1,17 +1,20 @@
 import { Linkedin, Twitter } from 'lucide-react';
 import { scrollToSection } from '../utils/scrollHelpers';
+import { CONTACT_EMAIL } from '../config/site';
 
 export default function Footer() {
 
   const productLinks = [
     { label: 'Platform Overview', section: 'platform' },
     { label: 'Capabilities', section: 'features' },
+    { label: 'Supply-Chain Security', section: 'supplychain' },
     { label: 'Xhub Remediation', section: 'remediation' },
     { label: 'Multi-Cloud Coverage', section: 'multicloud' },
   ];
 
   const companyLinks = [
     { label: 'Watch the Overview', section: 'overview' },
+    { label: 'Savings Calculator', section: 'roi' },
     { label: 'How It Works', section: 'howitworks' },
     { label: 'Solutions by Team', section: 'solutions' },
     { label: 'Contact', section: 'contact' },
@@ -28,7 +31,7 @@ export default function Footer() {
               className="h-9 md:h-10 w-auto mb-3 md:mb-4 brightness-0 invert"
             />
             <p className="text-xs md:text-sm text-gray-400 mb-4 md:mb-5">
-              AI-Powered Cloud Optimisation, Risk Mitigation & Compliance
+              AI-Powered Cloud Optimization, Risk Mitigation & Compliance
             </p>
             <div className="flex gap-3 md:gap-4">
               <div className="px-3 md:px-4 py-1.5 md:py-2 bg-gray-800 rounded-lg text-xs font-medium grayscale hover:grayscale-0 transition-all">
@@ -92,13 +95,13 @@ export default function Footer() {
 
           <div className="flex gap-4 md:gap-6 text-xs md:text-sm">
             <a
-              href="mailto:hello@xops360.com.au?subject=Privacy%20enquiry"
+              href={`mailto:${CONTACT_EMAIL}?subject=Privacy%20inquiry`}
               className="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded py-1"
             >
               Privacy
             </a>
             <a
-              href="mailto:hello@xops360.com.au?subject=Security%20enquiry"
+              href={`mailto:${CONTACT_EMAIL}?subject=Security%20inquiry`}
               className="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded py-1"
             >
               Security

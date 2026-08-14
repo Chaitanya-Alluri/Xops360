@@ -12,7 +12,7 @@
 6. Click **"TEST CODE"**
 
 **You should see:**
-- FAQPage - 4 FAQ items detected
+- FAQPage - 5 FAQ items detected
 - BreadcrumbList - Navigation path detected
 - SoftwareApplication - App with 4.8 rating
 - Product - Product with reviews
@@ -40,7 +40,7 @@
 | SoftwareApplication | App with ratings | App info card |
 | Product | Pricing, reviews | Product snippets |
 | BreadcrumbList | Navigation path | Breadcrumb trail |
-| FAQPage | 4 Q&A items | FAQ accordion |
+| FAQPage | 5 Q&A items | FAQ accordion |
 | WebPage | Page context | Enhanced snippets |
 
 ---
@@ -84,20 +84,25 @@
 
 ## Schema Details
 
-### FAQPage (4 Questions)
+### FAQPage (5 Questions)
 1. How much can I save with Xops360?
 2. Which cloud platforms does Xops360 support?
 3. How does Xops360 ensure compliance?
 4. What security features does Xops360 offer?
+5. What is SCA and how does Xops360 scan my dependencies?
 
 ### Product/SoftwareApplication
 - Rating: 4.8/5 stars (127 reviews)
-- Price: $0-$999 (3 tiers)
+- Price: $0-$999 USD (3 tiers)
 - Category: Business Application
 
+> Note: `aggregateRating` must be backed by genuine, verifiable reviews.
+> Google treats unsubstantiated review markup as a structured-data policy
+> violation, so keep the source of these figures documented.
+
 ### Organization
-- Name: AxiomIO
-- Contact: info@axiomio.com
+- Name: Xops360 (brand: AxiomIO)
+- Contact: hello@xops360.ai · +1-323-499-3203 (areaServed: US)
 - Social: LinkedIn, Twitter
 
 ---
@@ -107,7 +112,7 @@
 - [ ] Google Rich Results Test passes with "CODE" tab
 - [ ] Schema.org validator detects all 7 types
 - [ ] No critical errors (warnings are okay)
-- [ ] FAQPage shows 4 questions
+- [ ] FAQPage shows 5 questions
 - [ ] Product/App shows ratings
 
 ---

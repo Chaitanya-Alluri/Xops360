@@ -107,7 +107,7 @@ export default function Hero() {
                           "Why did my AWS bill jump this month?"
                         </p>
                         <p className="mt-1 text-[11px] md:text-xs text-blue-700">
-                          15 idle EC2 instances found · ~AU$4,200/mo recoverable
+                          15 idle EC2 instances found · ~$4,200/mo recoverable
                           <span className="ml-0.5 inline-block w-1.5 h-3 align-middle bg-blue-500 animate-blink" />
                         </p>
                       </div>
@@ -119,7 +119,7 @@ export default function Hero() {
                       <div>
                         <p className="text-xs md:text-sm text-gray-600">Total Cloud Spend</p>
                         <p className="text-xl md:text-2xl font-bold text-gray-900">
-                          <AnimatedNumber value={847230} prefix="AU$" className="inline-block" />
+                          <AnimatedNumber value={847230} prefix="$" className="inline-block" />
                         </p>
                       </div>
                       <div className="flex items-center gap-1 text-sm md:text-base text-green-600 font-semibold">

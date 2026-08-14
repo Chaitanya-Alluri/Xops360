@@ -2,13 +2,7 @@ import { useState } from 'react';
 import { Calculator, TrendingDown, ArrowRight, Sparkles } from 'lucide-react';
 import Reveal from './Reveal';
 import { scrollToSection } from '../utils/scrollHelpers';
-
-const SAVINGS_RATE = 0.22; // average observed cost reduction
-
-/** Australian-market formatting: AU$ with en-AU grouping. */
-function formatAUD(n: number) {
-  return n.toLocaleString('en-AU', { maximumFractionDigits: 0 });
-}
+import { SAVINGS_RATE, formatUSD } from '../config/site';
 
 export default function RoiCalculator() {
   const [monthly, setMonthly] = useState(80000);
@@ -18,6 +12,7 @@ export default function RoiCalculator() {
 
   return (
     <section
+      id="roi"
       className="py-12 md:py-16 px-4 md:px-6 bg-gray-50"
       style={{ scrollMarginTop: '80px' }}
     >
@@ -44,7 +39,7 @@ export default function RoiCalculator() {
                   Your monthly cloud spend
                 </label>
                 <p className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
-                  AU${formatAUD(monthly)}
+                  ${formatUSD(monthly)}
                   <span className="text-base font-medium text-gray-400"> /mo</span>
                 </p>
                 <input
@@ -59,8 +54,8 @@ export default function RoiCalculator() {
                   aria-label="Monthly cloud spend"
                 />
                 <div className="flex justify-between text-[11px] text-gray-400 mt-2">
-                  <span>AU$10K</span>
-                  <span>AU$1M</span>
+                  <span>$10K</span>
+                  <span>$1M</span>
                 </div>
                 <p className="text-xs text-gray-500 mt-5 leading-relaxed">
                   Based on an average <span className="font-semibold text-gray-700">22%</span> reduction across
@@ -74,10 +69,10 @@ export default function RoiCalculator() {
                   <TrendingDown size={16} /> Estimated recoverable / year
                 </p>
                 <p className="text-4xl md:text-5xl font-bold my-2 tabular-nums">
-                  AU${formatAUD(annualSavings)}
+                  ${formatUSD(annualSavings)}
                 </p>
                 <p className="text-sm text-blue-50">
-                  ≈ <span className="font-semibold text-white">AU${formatAUD(monthlySavings)}</span> every month back in budget
+                  ≈ <span className="font-semibold text-white">${formatUSD(monthlySavings)}</span> every month back in budget
                 </p>
 
                 <button

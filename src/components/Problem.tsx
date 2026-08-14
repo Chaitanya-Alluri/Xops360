@@ -1,4 +1,4 @@
-import { TrendingUp, ShieldAlert, Cloud, Server, CalendarX, Wrench } from 'lucide-react';
+import { TrendingUp, ShieldAlert, Server, CalendarX, Wrench, PackageSearch } from 'lucide-react';
 import Reveal from './Reveal';
 
 export default function Problem() {
@@ -7,7 +7,7 @@ export default function Problem() {
       icon: TrendingUp,
       iconColor: 'text-slate-600',
       title: 'Unpredictable Cost Escalation',
-      description: 'Cloud bills surge monthly with no transparent breakdown of spending drivers. Finance teams lack visibility into which services, teams, or workloads are consuming budget.'
+      description: 'Cloud bills surge monthly with no transparent breakdown of spending drivers, while idle and over-provisioned resources quietly drain budget. Finance teams cannot say which services, teams, or workloads are responsible.'
     },
     {
       icon: ShieldAlert,
@@ -16,10 +16,10 @@ export default function Problem() {
       description: 'Vulnerabilities in AMIs, ECR/ACR container images, and misconfigurations stay undetected until the next audit, creating long, silent risk windows.'
     },
     {
-      icon: Cloud,
+      icon: PackageSearch,
       iconColor: 'text-teal-700',
-      title: 'Silent Budget Erosion',
-      description: 'Idle instances, over-provisioned resources, and forgotten workloads continuously drain budget. Without real-time visibility, waste compounds across quarters.'
+      title: 'Unvetted Open-Source Supply Chain',
+      description: 'Most of your application is third-party code, and the risk lives in transitive dependencies nobody reviewed. Without scanning at build time, a vulnerable package ships to production and stays there.'
     },
     {
       icon: Server,
@@ -31,7 +31,7 @@ export default function Problem() {
       icon: CalendarX,
       iconColor: 'text-slate-600',
       title: 'Compliance Is a Once-a-Year Fire Drill',
-      description: 'Annual Well-Architected and framework reviews leave 364 days of drift unaddressed, and re-checking CIS, PCI-DSS, GDPR, and SOC 2 separately multiplies the effort.'
+      description: 'Annual Well-Architected and framework reviews leave 364 days of drift unaddressed, and re-checking SOC 2, PCI-DSS, CIS, and ISO 27001 separately multiplies the effort.'
     },
     {
       icon: Wrench,

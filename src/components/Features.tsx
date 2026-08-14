@@ -1,6 +1,6 @@
 import {
   Bot, BarChart3, ShieldCheck, Boxes, PackageSearch, Radar,
-  Terminal, Activity, Compass, Grid3x3,
+  Terminal, Activity, Compass, Grid3x3, Coins,
 } from 'lucide-react';
 import Reveal from './Reveal';
 
@@ -20,6 +20,8 @@ interface Feature {
   title: string;
   description: string;
   bullets: string[];
+  /** Flags a recently shipped capability with a "New" badge. */
+  isNew?: boolean;
 }
 
 interface Pillar {
@@ -41,32 +43,32 @@ const pillars: Pillar[] = [
         icon: Bot, gradient: 'from-indigo-600 to-indigo-800', tag: 'Agentic AI',
         title: 'Xara Agent: your cloud co-pilot',
         description: 'A conversational agent that explains cost spikes, runs Well-Architected reviews, and recommends fixes in plain language.',
-        bullets: ['Ask "why did my bill jump?" and get the root cause', 'On-demand AWS & Azure Well-Architected reviews', 'Prioritised, actionable recommendations'],
+        bullets: ['Ask "why did my bill jump?" and get the root cause', 'On-demand AWS & Azure Well-Architected reviews', 'Prioritized, actionable recommendations'],
       },
       {
         icon: BarChart3, gradient: 'from-blue-600 to-blue-800', tag: 'FinOps',
-        title: 'Cost Analyser & anomaly detection',
+        title: 'Cost Analyzer & anomaly detection',
         description: 'Live, multi-account spend with forecasts and month-over-month trends, so you catch anomalies as they emerge.',
         bullets: ['Spend by account, service & region', 'Forecasting with anomaly alerts', 'Daily granularity across 20+ accounts'],
       },
       {
-        icon: PackageSearch, gradient: 'from-blue-600 to-teal-700', tag: 'FinOps',
+        icon: Coins, gradient: 'from-blue-600 to-teal-700', tag: 'FinOps',
         title: 'Saving Opportunities & right-sizing',
         description: 'Turn waste into savings with Reserved Instance / Savings Plan guidance and right-sizing.',
         bullets: ['RI & Savings Plan recommendations', 'Right-size EC2, EBS & storage', 'Quantified dollar impact per action'],
       },
       {
         icon: Grid3x3, gradient: 'from-teal-600 to-teal-800', tag: 'CloudOps',
-        title: 'Resource Manager & Optimiser',
+        title: 'Resource Manager & Optimizer',
         description: 'Single-pane inventory across every region and account, with tag-compliance and cleanup insights.',
-        bullets: ['Cross-region inventory (25+ services)', 'Tag compliance & backup coverage', 'Idle & unutilised resource detection'],
+        bullets: ['Cross-region inventory (25+ services)', 'Tag compliance & backup coverage', 'Idle & unutilized resource detection'],
       },
     ],
   },
   {
     key: 'secure',
     label: 'Secure & prove it',
-    tagline: 'Continuous security and always-on, audit-ready compliance.',
+    tagline: 'Continuous security, supply-chain visibility, and always-on audit readiness.',
     accent: 'text-slate-700',
     features: [
       {
@@ -83,9 +85,15 @@ const pillars: Pillar[] = [
       },
       {
         icon: Radar, gradient: 'from-slate-600 to-slate-900', tag: 'SecOps',
-        title: 'Cyber & supply-chain suite',
-        description: 'OSINT, DAST pentesting, network exposure, and SCA dependency scanning, wired into CI/CD.',
-        bullets: ['OSINT: SSL, DNS, subdomain footprint', 'DAST for APIs, web & mobile', 'SCA for lock files, shifted left'],
+        title: 'Cyber security suite',
+        description: 'OSINT, DAST pentesting, and network exposure analysis across your external attack surface.',
+        bullets: ['OSINT: SSL, DNS, subdomain footprint', 'DAST for APIs, web & mobile', 'Open ports & security-group weaknesses'],
+      },
+      {
+        icon: PackageSearch, gradient: 'from-teal-600 to-slate-800', tag: 'SecOps', isNew: true,
+        title: 'SCA supply-chain scanning',
+        description: 'Software Composition Analysis for your dependencies: upload a lock file or run it on every build.',
+        bullets: ['npm, Yarn, pnpm, Python, Go & Rust lock files', 'Automatic language detection', 'CI/CD integration, shifted left'],
       },
     ],
   },
@@ -98,7 +106,7 @@ const pillars: Pillar[] = [
       {
         icon: Terminal, gradient: 'from-teal-600 to-cyan-700', tag: 'CloudOps',
         title: 'Self-service IaC automation',
-        description: 'Provision hardened infrastructure from a catalogue of Terraform modules, including one-click EKS.',
+        description: 'Provision hardened infrastructure from a catalog of Terraform modules, including one-click EKS.',
         bullets: ['VPC, ECS, EC2, RDS, S3, ALB, CloudFront, IAM', 'One-click EKS deployment', 'Consistent, governed builds'],
       },
       {
@@ -126,9 +134,16 @@ function FeatureCard({ feature, delay }: { feature: Feature; delay: number }) {
           <div className={`w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
             <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
           </div>
-          <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full border ${tagStyles[feature.tag]}`}>
-            {feature.tag}
-          </span>
+          <div className="flex items-center gap-1.5">
+            {feature.isNew && (
+              <span className="text-[10px] font-bold uppercase tracking-wide text-white bg-teal-600 px-2 py-1 rounded-full">
+                New
+              </span>
+            )}
+            <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full border ${tagStyles[feature.tag]}`}>
+              {feature.tag}
+            </span>
+          </div>
         </div>
         <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
         <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-3">{feature.description}</p>

@@ -13,7 +13,11 @@ const rows = [
   },
   {
     before: 'Compliance is an annual, per-framework fire drill',
-    after: 'One continuous scan mapped to CIS, PCI-DSS, GDPR, SOC 2 & ISO 27001',
+    after: 'One continuous scan mapped to SOC 2, PCI-DSS, CIS, ISO 27001 & GDPR',
+  },
+  {
+    before: 'Open-source dependencies ship unchecked into production',
+    after: 'SCA on every lock file and every build, wired into CI/CD',
   },
   {
     before: 'Findings pile up in a dashboard, unowned',
@@ -37,7 +41,7 @@ export default function BeforeAfter() {
             Most tools stop at the finding. <span className="text-gradient">Xops360 closes the loop.</span>
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-            The difference between a dashboard full of problems and a cloud that's actually optimised,
+            The difference between a dashboard full of problems and a cloud that's actually optimized,
             secure, and audit-ready.
           </p>
         </Reveal>

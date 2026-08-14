@@ -6,6 +6,7 @@ import BeforeAfter from './components/BeforeAfter';
 import Platform from './components/Platform';
 import VideoSection from './components/VideoSection';
 import Remediation from './components/Remediation';
+import SupplyChain from './components/SupplyChain';
 import CTABand from './components/CTABand';
 import Features from './components/Features';
 import MultiCloud from './components/MultiCloud';
@@ -33,6 +34,7 @@ function App() {
         <Platform />
         <VideoSection />
         <Remediation />
+        <SupplyChain />
         <CTABand
           headline="See your own findings, and fix them, in one demo."
           sub="Connect read-only in minutes. We'll surface your top cost, security, and compliance wins live."

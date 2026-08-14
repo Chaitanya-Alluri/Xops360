@@ -1,10 +1,15 @@
 import { Mail, Phone, ArrowRight } from 'lucide-react';
+import { CONTACT_EMAIL, SALES_PHONE, mailto } from '../config/site';
 
-const DEMO_MAILTO =
-  'mailto:hello@xops360.com.au?subject=Demo%20request%20%E2%80%94%20Xops360&body=Hi%20Xops360%20team%2C%0A%0AI%27d%20like%20to%20see%20a%20demo.%0A%0ACompany%3A%0AClouds%20in%20use%20(AWS%2FAzure%2FM365)%3A%0AApprox.%20monthly%20cloud%20spend%3A%0A%0AThanks%2C';
+const DEMO_MAILTO = mailto(
+  'Demo request - Xops360',
+  "Hi Xops360 team,\n\nI'd like to see a demo.\n\nCompany:\nClouds in use (AWS/Azure/M365):\nApprox. monthly cloud spend:\n\nThanks,"
+);
 
-const EXPERT_MAILTO =
-  'mailto:hello@xops360.com.au?subject=Speak%20with%20a%20cloud%20expert%20%E2%80%94%20Xops360&body=Hi%20Xops360%20team%2C%0A%0AI%27d%20like%20to%20talk%20to%20a%20cloud%20expert%20about%3A%0A%0A%0AThanks%2C';
+const EXPERT_MAILTO = mailto(
+  'Speak with a cloud expert - Xops360',
+  "Hi Xops360 team,\n\nI'd like to talk to a cloud expert about:\n\n\nThanks,"
+);
 
 export default function Contact() {
 
@@ -12,14 +17,14 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@xops360.com.au',
-      link: 'mailto:hello@xops360.com.au'
+      value: CONTACT_EMAIL,
+      link: `mailto:${CONTACT_EMAIL}`
     },
     {
       icon: Phone,
-      label: 'Call us (AU)',
-      value: '+61 402 199 442',
-      link: 'tel:+61402199442'
+      label: 'Call us (US)',
+      value: SALES_PHONE.display,
+      link: SALES_PHONE.href
     }
   ];
 
@@ -35,7 +40,8 @@ export default function Contact() {
         </h2>
 
         <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-8 md:mb-10 max-w-3xl mx-auto">
-          See how Xops360 can reduce costs, strengthen security, and ensure compliance for your enterprise.
+          Connect read-only in minutes and see your own cost, security, and compliance findings in a
+          live session. No procurement cycle required to get the first look.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">

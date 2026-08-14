@@ -8,12 +8,19 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
-    const handleScroll = () => {
+    const sections = [
+      'hero', 'challenge', 'platform', 'remediation', 'supplychain',
+      'features', 'multicloud', 'solutions', 'roi', 'howitworks', 'contact',
+    ];
+
+    // The raw scroll event fires far more often than we can paint, and each run
+    // does a getElementById sweep. Coalesce to one measurement per frame.
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['hero', 'platform', 'remediation', 'features', 'solutions', 'contact'];
       const scrollPosition = window.scrollY + 100;
-
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -26,8 +33,17 @@ export default function Navigation() {
       }
     };
 
+    const handleScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(measure);
+    };
+
+    measure();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   const scrollToSection = useCallback((sectionId: string) => {
@@ -38,6 +54,7 @@ export default function Navigation() {
   const navLinks = [
     { id: 'platform', label: 'Platform' },
     { id: 'remediation', label: 'Remediation' },
+    { id: 'supplychain', label: 'Supply Chain' },
     { id: 'features', label: 'Capabilities' },
     { id: 'solutions', label: 'Solutions' },
   ];
@@ -49,7 +66,7 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Equal 1fr side columns keep the nav links optically centred
+        {/* Equal 1fr side columns keep the nav links optically centered
             regardless of the logo / CTA widths. */}
         <div className="flex items-center justify-between py-3 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-6">
           <button
@@ -64,7 +81,7 @@ export default function Navigation() {
             />
           </button>
 
-          <div className="hidden lg:flex items-center justify-center space-x-8">
+          <div className="hidden lg:flex items-center justify-center lg:space-x-5 xl:space-x-8 whitespace-nowrap">
             {navLinks.map((link) => (
               <button
                 key={link.id}
