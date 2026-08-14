@@ -4,7 +4,8 @@
  * one-file edit rather than a hunt through every component.
  */
 
-export const CONTACT_EMAIL = 'hello@xops360.ai';
+/** Inbound mail is handled by AxiomIO, the parent company, not the product domain. */
+export const CONTACT_EMAIL = 'hello@axiomio.com';
 
 export const SALES_PHONE = {
   /** Human-readable, US formatting. */

@@ -102,7 +102,7 @@
 
 ### Organization
 - Name: Xops360 (brand: AxiomIO)
-- Contact: hello@xops360.ai · +1-323-499-3203 (areaServed: US)
+- Contact: hello@axiomio.com · +1-323-499-3203 (areaServed: US)
 - Social: LinkedIn, Twitter
 
 ---
