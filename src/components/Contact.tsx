@@ -1,10 +1,5 @@
 import { Mail, Phone, ArrowRight } from 'lucide-react';
-import { CONTACT_EMAIL, SALES_PHONE, mailto } from '../config/site';
-
-const DEMO_MAILTO = mailto(
-  'Demo request - Xops360',
-  "Hi Xops360 team,\n\nI'd like to see a demo.\n\nCompany:\nClouds in use (AWS/Azure/M365):\nApprox. monthly cloud spend:\n\nThanks,"
-);
+import { CONTACT_EMAIL, SALES_PHONE, DEMO_BOOKING_URL, EXTERNAL_LINK, mailto } from '../config/site';
 
 const EXPERT_MAILTO = mailto(
   'Speak with a cloud expert - Xops360',
@@ -47,7 +42,8 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
           <div className="space-y-4 md:space-y-5">
             <a
-              href={DEMO_MAILTO}
+              href={DEMO_BOOKING_URL}
+              {...EXTERNAL_LINK}
               className="group w-full px-8 md:px-10 lg:px-12 py-4 md:py-5 lg:py-6 bg-gradient-to-r from-blue-600 to-teal-500 text-white text-base md:text-lg lg:text-xl font-bold rounded-xl shadow-2xl hover:scale-105 md:hover:scale-110 hover:shadow-blue-500/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white flex items-center justify-center gap-2 md:gap-3"
             >
               Request a Demo

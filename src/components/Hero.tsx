@@ -1,6 +1,7 @@
 import { ArrowRight, Sparkles, ShieldCheck, TrendingDown } from 'lucide-react';
 import AnimatedNumber from './AnimatedNumber';
 import { scrollToSection } from '../utils/scrollHelpers';
+import { DEMO_BOOKING_URL, EXTERNAL_LINK } from '../config/site';
 
 export default function Hero() {
   return (
@@ -36,13 +37,14 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start mb-6 md:mb-8">
-              <button
-                onClick={() => scrollToSection('contact')}
+              <a
+                href={DEMO_BOOKING_URL}
+                {...EXTERNAL_LINK}
                 className="group px-6 md:px-8 py-3 md:py-3.5 bg-gradient-animated text-white text-base md:text-lg font-semibold rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center gap-2"
               >
                 Request a Demo
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
               <button
                 onClick={() => scrollToSection('contact')}

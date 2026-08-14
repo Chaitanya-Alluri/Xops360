@@ -1,6 +1,6 @@
 import { PlayCircle } from 'lucide-react';
 import Reveal from './Reveal';
-import { scrollToSection } from '../utils/scrollHelpers';
+import { DEMO_BOOKING_URL, EXTERNAL_LINK } from '../config/site';
 
 export default function VideoSection() {
   return (
@@ -38,12 +38,13 @@ export default function VideoSection() {
         </Reveal>
 
         <Reveal className="text-center mt-8">
-          <button
-            onClick={() => scrollToSection('contact')}
-            className="px-7 py-3 bg-white text-blue-800 font-semibold rounded-lg shadow hover:scale-105 transition-transform"
+          <a
+            href={DEMO_BOOKING_URL}
+            {...EXTERNAL_LINK}
+            className="inline-block px-7 py-3 bg-white text-blue-800 font-semibold rounded-lg shadow hover:scale-105 transition-transform"
           >
             Book a live walkthrough
-          </button>
+          </a>
         </Reveal>
       </div>
     </section>

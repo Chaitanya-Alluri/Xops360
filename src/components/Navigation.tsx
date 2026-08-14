@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { scrollToSection as scrollTo } from '../utils/scrollHelpers';
+import { DEMO_BOOKING_URL, EXTERNAL_LINK } from '../config/site';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -111,13 +112,14 @@ export default function Navigation() {
             >
               Sign In
             </a>
-            <button
-              onClick={() => scrollToSection('contact')}
+            <a
+              href={DEMO_BOOKING_URL}
+              {...EXTERNAL_LINK}
               className="group px-6 py-2.5 bg-gradient-animated text-white text-sm font-semibold rounded-lg hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center gap-2"
             >
               Request a Demo
               <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
 
           <button
@@ -154,12 +156,14 @@ export default function Navigation() {
             >
               Sign In
             </a>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="w-full px-6 py-3 bg-gradient-animated text-white font-semibold rounded-lg shadow-md"
+            <a
+              href={DEMO_BOOKING_URL}
+              {...EXTERNAL_LINK}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block w-full text-center px-6 py-3 bg-gradient-animated text-white font-semibold rounded-lg shadow-md"
             >
               Request a Demo
-            </button>
+            </a>
           </div>
         </div>
       )}

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Calculator, TrendingDown, ArrowRight, Sparkles } from 'lucide-react';
 import Reveal from './Reveal';
-import { scrollToSection } from '../utils/scrollHelpers';
-import { SAVINGS_RATE, formatUSD } from '../config/site';
+import { SAVINGS_RATE, formatUSD, DEMO_BOOKING_URL, EXTERNAL_LINK } from '../config/site';
 
 export default function RoiCalculator() {
   const [monthly, setMonthly] = useState(80000);
@@ -76,14 +75,15 @@ export default function RoiCalculator() {
                   ≈ <span className="font-semibold text-white">${formatUSD(monthlySavings)}</span> every month back in budget
                 </p>
 
-                <button
-                  onClick={() => scrollToSection('contact')}
+                <a
+                  href={DEMO_BOOKING_URL}
+                  {...EXTERNAL_LINK}
                   className="group mt-6 inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:scale-[1.02] transition-transform"
                 >
                   <Sparkles size={16} />
                   Get a free Cloud Health Check
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
                 <p className="text-[11px] text-blue-100 mt-2 text-center">
                   Read-only connect · findings in minutes · no credit card
                 </p>

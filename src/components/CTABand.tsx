@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { scrollToSection } from '../utils/scrollHelpers';
+import { DEMO_BOOKING_URL, EXTERNAL_LINK } from '../config/site';
 import Reveal from './Reveal';
 
 interface CTABandProps {
@@ -26,13 +27,14 @@ export default function CTABand({
               {sub && <p className="text-sm md:text-base text-blue-50 mt-1.5 max-w-xl">{sub}</p>}
             </div>
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-              <button
-                onClick={() => scrollToSection('contact')}
+              <a
+                href={DEMO_BOOKING_URL}
+                {...EXTERNAL_LINK}
                 className="group px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg shadow hover:scale-105 transition-transform flex items-center justify-center gap-2"
               >
                 {primaryLabel}
                 <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="px-6 py-3 border-2 border-white/70 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"

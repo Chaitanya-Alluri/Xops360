@@ -1,6 +1,6 @@
 import { PackageSearch, GitPullRequest, FileCode2, ScanLine, ShieldAlert, ArrowRight, CheckCircle2 } from 'lucide-react';
 import Reveal from './Reveal';
-import { scrollToSection } from '../utils/scrollHelpers';
+import { DEMO_BOOKING_URL, EXTERNAL_LINK } from '../config/site';
 
 /** Lock files the SCA scanner accepts, with the ecosystem it auto-detects. */
 const lockFiles = [
@@ -159,13 +159,14 @@ export default function SupplyChain() {
         </div>
 
         <Reveal className="text-center mt-8 md:mt-10">
-          <button
-            onClick={() => scrollToSection('contact')}
+          <a
+            href={DEMO_BOOKING_URL}
+            {...EXTERNAL_LINK}
             className="group inline-flex items-center gap-2 text-teal-700 font-semibold hover:gap-3 transition-all"
           >
             Scan your dependencies in a demo
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </Reveal>
       </div>
     </section>

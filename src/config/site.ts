@@ -7,6 +7,18 @@
 /** Inbound mail is handled by AxiomIO, the parent company, not the product domain. */
 export const CONTACT_EMAIL = 'hello@axiomio.com';
 
+/**
+ * Calendly discovery call. Every "book a demo" style CTA points here so a
+ * visitor can self-serve a slot instead of composing an email and waiting.
+ */
+export const DEMO_BOOKING_URL = 'https://calendly.com/xops360discovery/';
+
+/** Shared props for links that leave the site. */
+export const EXTERNAL_LINK = {
+  target: '_blank',
+  rel: 'noopener noreferrer',
+} as const;
+
 export const SALES_PHONE = {
   /** Human-readable, US formatting. */
   display: '+1 (323) 499-3203',
