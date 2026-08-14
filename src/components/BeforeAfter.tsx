@@ -31,7 +31,7 @@ const rows = [
 
 export default function BeforeAfter() {
   return (
-    <section
+    <section aria-label="Xops360 compared with disconnected tools"
       className="py-12 md:py-16 px-4 md:px-6 bg-white"
       style={{ scrollMarginTop: '80px' }}
     >
@@ -77,7 +77,7 @@ export default function BeforeAfter() {
               <ul className="space-y-3.5">
                 {rows.map((r, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm md:text-base text-gray-800 font-medium">
-                    <Check className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                    <Check className="w-4 h-4 text-green-700 mt-1 flex-shrink-0" />
                     <span>{r.after}</span>
                   </li>
                 ))}

@@ -16,7 +16,7 @@ export default function CTABand({
   secondaryLabel = 'Talk to a Cloud Expert',
 }: CTABandProps) {
   return (
-    <section className="px-4 md:px-6 py-10 md:py-12">
+    <section aria-label="Request a demo" className="px-4 md:px-6 py-10 md:py-12">
       <Reveal className="max-w-6xl mx-auto">
         <div className="relative overflow-hidden rounded-2xl bg-gradient-animated px-6 py-8 md:px-10 md:py-10 shadow-xl">
           <div className="absolute inset-0 opacity-20 bg-grid-dots" />

@@ -26,7 +26,7 @@ export default function Remediation() {
   }, []);
 
   return (
-    <section
+    <section aria-label="Xhub remediation board"
       id="remediation"
       className="py-14 md:py-20 px-4 md:px-6 bg-gradient-to-b from-white via-blue-50/40 to-white relative overflow-hidden"
       style={{ scrollMarginTop: '80px' }}
@@ -35,8 +35,8 @@ export default function Remediation() {
       <div className="relative max-w-7xl mx-auto">
         <Reveal className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal-50 rounded-full mb-3 border border-teal-100">
-            <Wrench size={13} className="text-teal-600" />
-            <p className="text-xs uppercase text-teal-600 font-semibold tracking-wide">
+            <Wrench size={13} className="text-teal-700" />
+            <p className="text-xs uppercase text-teal-700 font-semibold tracking-wide">
               The Xhub Remediation Board
             </p>
           </div>
@@ -74,11 +74,11 @@ export default function Remediation() {
                       {isDone ? (
                         <CheckCircle2 className="w-6 h-6 text-white" />
                       ) : (
-                        <Icon className={`w-6 h-6 ${isActive ? 'text-white' : 'text-gray-400'}`} />
+                        <Icon className={`w-6 h-6 ${isActive ? 'text-white' : 'text-gray-500'}`} />
                       )}
                     </div>
                   </div>
-                  <p className={`text-sm md:text-base font-semibold transition-colors ${isActive || isDone ? 'text-gray-900' : 'text-gray-400'}`}>
+                  <p className={`text-sm md:text-base font-semibold transition-colors ${isActive || isDone ? 'text-gray-900' : 'text-gray-500'}`}>
                     {s.title}
                   </p>
                   <p className="text-[11px] md:text-xs text-gray-500 mt-1 max-w-[10rem]">{s.desc}</p>
@@ -106,7 +106,7 @@ export default function Remediation() {
                 <p className="text-[11px] md:text-xs text-gray-500 mt-1">Issues triaged</p>
               </div>
               <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm text-center">
-                <p className="text-2xl md:text-3xl font-bold text-teal-600">
+                <p className="text-2xl md:text-3xl font-bold text-teal-700">
                   <AnimatedNumber value={72} suffix="%" className="inline-block" />
                 </p>
                 <p className="text-[11px] md:text-xs text-gray-500 mt-1">Governance score</p>
@@ -121,11 +121,11 @@ export default function Remediation() {
             <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm flex-1">
               <p className="text-sm font-semibold text-gray-900 mb-3">Unified triage across every discipline</p>
               <ul className="space-y-2.5 text-sm text-gray-600">
-                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Security misconfigurations &amp; compliance failures</li>
-                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Workload CVEs from AMI, ECR &amp; ACR scans</li>
-                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Vulnerable dependencies surfaced by SCA</li>
-                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Cost leakage &amp; idle-resource waste</li>
-                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-600 mt-0.5 flex-shrink-0" /> Per-account governance score, leakage &amp; SLA breaches</li>
+                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-700 mt-0.5 flex-shrink-0" /> Security misconfigurations &amp; compliance failures</li>
+                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-700 mt-0.5 flex-shrink-0" /> Workload CVEs from AMI, ECR &amp; ACR scans</li>
+                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-700 mt-0.5 flex-shrink-0" /> Vulnerable dependencies surfaced by SCA</li>
+                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-700 mt-0.5 flex-shrink-0" /> Cost leakage &amp; idle-resource waste</li>
+                <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-700 mt-0.5 flex-shrink-0" /> Per-account governance score, leakage &amp; SLA breaches</li>
               </ul>
             </div>
           </Reveal>
@@ -143,13 +143,13 @@ export default function Remediation() {
               <div className="p-4 md:p-5 space-y-3">
                 <div className="rounded-xl border border-red-100 bg-red-50/60 p-4">
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[10px] font-bold uppercase tracking-wide text-red-600 bg-red-100 px-2 py-0.5 rounded">Critical</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wide text-red-700 bg-red-100 px-2 py-0.5 rounded">Critical</span>
                     <span className="flex items-center gap-1 text-[11px] font-medium text-red-500">
                       <Clock size={12} /> SLA breach · 2d 4h
                     </span>
                   </div>
                   <p className="text-sm font-medium text-gray-800">Root user not protected with hardware MFA</p>
-                  <p className="text-[11px] text-gray-500 mt-0.5">SecOps · CIS-1.5 · 3 resources</p>
+                  <p className="text-[11px] text-gray-600 mt-0.5">SecOps · CIS-1.5 · 3 resources</p>
                   <div
                     aria-hidden="true"
                     className="mt-3 w-full bg-gradient-animated text-white text-sm font-semibold py-2 rounded-lg shadow flex items-center justify-center gap-1.5 select-none"
@@ -159,16 +159,16 @@ export default function Remediation() {
                 </div>
                 <div className="rounded-xl border border-orange-100 bg-orange-50/60 p-4">
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[10px] font-bold uppercase tracking-wide text-orange-600 bg-orange-100 px-2 py-0.5 rounded">High</span>
-                    <span className="flex items-center gap-1 text-[11px] font-medium text-gray-500">
+                    <span className="text-[10px] font-bold uppercase tracking-wide text-orange-700 bg-orange-100 px-2 py-0.5 rounded">High</span>
+                    <span className="flex items-center gap-1 text-[11px] font-medium text-gray-600">
                       <Clock size={12} /> Due in 5d
                     </span>
                   </div>
                   <p className="text-sm font-medium text-gray-800">CVE-2022-32221 detected in ECR image</p>
-                  <p className="text-[11px] text-gray-500 mt-0.5">CloudOps · Workload Security · 3 resources</p>
+                  <p className="text-[11px] text-gray-600 mt-0.5">CloudOps · Workload Security · 3 resources</p>
                 </div>
                 <div className="rounded-xl border border-green-100 bg-green-50/60 p-3 flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-green-600 flex-shrink-0" />
+                  <CheckCircle2 size={16} className="text-green-700 flex-shrink-0" />
                   <p className="text-sm text-gray-700">17 idle EC2 instances right-sized · <span className="font-semibold text-green-700">$4,200/mo saved</span></p>
                 </div>
               </div>

@@ -31,7 +31,7 @@ const modes = [
 
 export default function SupplyChain() {
   return (
-    <section
+    <section aria-label="Software composition analysis"
       id="supplychain"
       className="relative py-14 md:py-20 px-4 md:px-6 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden"
       style={{ scrollMarginTop: '80px' }}
@@ -41,11 +41,11 @@ export default function SupplyChain() {
       <div className="relative max-w-7xl mx-auto">
         <Reveal className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal-50 rounded-full mb-3 border border-teal-100">
-            <span className="text-[10px] font-bold uppercase tracking-wide text-white bg-teal-600 px-2 py-0.5 rounded">
+            <span className="text-[10px] font-bold uppercase tracking-wide text-white bg-teal-700 px-2 py-0.5 rounded">
               New
             </span>
-            <PackageSearch size={13} className="text-teal-600" />
-            <p className="text-xs uppercase text-teal-600 font-semibold tracking-wide">
+            <PackageSearch size={13} className="text-teal-700" />
+            <p className="text-xs uppercase text-teal-700 font-semibold tracking-wide">
               Software Composition Analysis
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function SupplyChain() {
                   <ul className="space-y-1.5">
                     {m.points.map((p) => (
                       <li key={p} className="text-xs md:text-sm text-gray-500 flex items-start gap-2">
-                        <CheckCircle2 size={15} className="text-green-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 size={15} className="text-green-700 mt-0.5 flex-shrink-0" />
                         <span>{p}</span>
                       </li>
                     ))}
@@ -101,7 +101,7 @@ export default function SupplyChain() {
               </div>
 
               <div className="p-4 md:p-5 flex-1 flex flex-col">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2.5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2.5">
                   Supported lock files
                 </p>
                 <div className="flex flex-wrap gap-2 mb-5">
@@ -110,44 +110,44 @@ export default function SupplyChain() {
                       key={l.file}
                       className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-[11px] md:text-xs font-medium text-slate-700"
                     >
-                      <FileCode2 size={12} className="text-slate-400" />
+                      <FileCode2 size={12} className="text-slate-500" />
                       <code className="font-mono">{l.file}</code>
-                      <span className="text-slate-400">{l.lang}</span>
+                      <span className="text-slate-500">{l.lang}</span>
                     </span>
                   ))}
                 </div>
 
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2.5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2.5">
                   Sample findings
                 </p>
                 <div className="space-y-2.5">
                   <div className="rounded-xl border border-red-100 bg-red-50/60 p-3.5">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[10px] font-bold uppercase tracking-wide text-red-600 bg-red-100 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wide text-red-700 bg-red-100 px-2 py-0.5 rounded">
                         Critical
                       </span>
-                      <span className="text-[11px] font-medium text-gray-500">transitive</span>
+                      <span className="text-[11px] font-medium text-gray-600">transitive</span>
                     </div>
                     <p className="text-sm font-medium text-gray-800">Remote code execution in a nested dependency</p>
-                    <p className="text-[11px] text-gray-500 mt-0.5">
+                    <p className="text-[11px] text-gray-600 mt-0.5">
                       Pulled in 3 levels deep &middot; fixed in a newer minor release
                     </p>
                   </div>
 
                   <div className="rounded-xl border border-orange-100 bg-orange-50/60 p-3.5">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[10px] font-bold uppercase tracking-wide text-orange-600 bg-orange-100 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wide text-orange-700 bg-orange-100 px-2 py-0.5 rounded">
                         High
                       </span>
-                      <span className="text-[11px] font-medium text-gray-500">direct</span>
+                      <span className="text-[11px] font-medium text-gray-600">direct</span>
                     </div>
                     <p className="text-sm font-medium text-gray-800">Prototype pollution in a direct dependency</p>
-                    <p className="text-[11px] text-gray-500 mt-0.5">Upgrade path available &middot; no breaking change</p>
+                    <p className="text-[11px] text-gray-600 mt-0.5">Upgrade path available &middot; no breaking change</p>
                   </div>
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-gray-100 flex items-start gap-2">
-                  <ShieldAlert size={16} className="text-teal-600 mt-0.5 flex-shrink-0" />
+                  <ShieldAlert size={16} className="text-teal-700 mt-0.5 flex-shrink-0" />
                   <p className="text-xs md:text-sm text-gray-600">
                     Every finding lands on the <span className="font-semibold text-gray-800">Xhub Remediation Board</span>{' '}
                     with an owner and an SLA clock, alongside your cloud misconfigurations and CVEs.

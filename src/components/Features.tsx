@@ -136,7 +136,7 @@ function FeatureCard({ feature, delay }: { feature: Feature; delay: number }) {
           </div>
           <div className="flex items-center gap-1.5">
             {feature.isNew && (
-              <span className="text-[10px] font-bold uppercase tracking-wide text-white bg-teal-600 px-2 py-1 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-wide text-white bg-teal-700 px-2 py-1 rounded-full">
                 New
               </span>
             )}
@@ -150,7 +150,7 @@ function FeatureCard({ feature, delay }: { feature: Feature; delay: number }) {
         <ul className="space-y-1.5">
           {feature.bullets.map((bullet, idx) => (
             <li key={idx} className="text-xs md:text-sm text-gray-500 flex items-start gap-2">
-              <span className="text-green-600 font-bold mt-0.5">✓</span>
+              <span className="text-green-700 font-bold mt-0.5">✓</span>
               <span>{bullet}</span>
             </li>
           ))}
@@ -162,7 +162,7 @@ function FeatureCard({ feature, delay }: { feature: Feature; delay: number }) {
 
 export default function Features() {
   return (
-    <section
+    <section aria-label="Platform capabilities"
       id="features"
       className="py-12 md:py-16 px-4 md:px-6 bg-gradient-to-b from-gray-50 to-white"
       style={{ scrollMarginTop: '80px' }}

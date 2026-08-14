@@ -40,7 +40,7 @@ const personas = [
 
 export default function Solutions() {
   return (
-    <section
+    <section aria-label="Solutions by team"
       id="solutions"
       className="py-12 md:py-16 px-4 md:px-6 bg-gray-50"
       style={{ scrollMarginTop: '80px' }}
@@ -64,12 +64,12 @@ export default function Solutions() {
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${p.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1.5">{p.audience}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1.5">{p.audience}</p>
                   <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 leading-snug">{p.headline}</h3>
                   <ul className="space-y-2.5 mt-auto">
                     {p.points.map((pt) => (
                       <li key={pt} className="text-sm text-gray-600 flex items-start gap-2">
-                        <span className="text-green-600 font-bold mt-0.5">✓</span>
+                        <span className="text-green-700 font-bold mt-0.5">✓</span>
                         <span>{pt}</span>
                       </li>
                     ))}

@@ -6,7 +6,7 @@ const clouds = [
   { label: 'Azure', sub: 'Management groups', color: 'bg-blue-600' },
   { label: 'Microsoft 365', sub: 'Tenant security', color: 'bg-sky-600' },
   { label: 'Entra ID', sub: 'Identity posture', color: 'bg-indigo-600' },
-  { label: 'EKS', sub: 'Kubernetes clusters', color: 'bg-teal-600' },
+  { label: 'EKS', sub: 'Kubernetes clusters', color: 'bg-teal-700' },
 ];
 
 // SOC 2 first: it is the framework US enterprise buyers ask about in the first call.
@@ -14,7 +14,7 @@ const frameworks = ['SOC 2', 'HIPAA', 'PCI-DSS', 'ISO 27001', 'CIS'];
 
 export default function MultiCloud() {
   return (
-    <section
+    <section aria-label="Multi-cloud coverage"
       id="multicloud"
       className="py-12 md:py-16 px-4 md:px-6 bg-white border-y border-gray-100"
       style={{ scrollMarginTop: '80px' }}

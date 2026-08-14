@@ -10,6 +10,7 @@ import SupplyChain from './components/SupplyChain';
 import CTABand from './components/CTABand';
 import Features from './components/Features';
 import MultiCloud from './components/MultiCloud';
+import Trust from './components/Trust';
 import Solutions from './components/Solutions';
 import RoiCalculator from './components/RoiCalculator';
 import HowItWorks from './components/HowItWorks';
@@ -43,6 +44,7 @@ function App() {
         />
         <Features />
         <MultiCloud />
+        <Trust />
         <Solutions />
         <RoiCalculator />
         <HowItWorks />

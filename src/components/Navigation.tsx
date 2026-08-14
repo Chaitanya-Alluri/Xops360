@@ -10,7 +10,7 @@ export default function Navigation() {
   useEffect(() => {
     const sections = [
       'hero', 'challenge', 'platform', 'remediation', 'supplychain',
-      'features', 'multicloud', 'solutions', 'roi', 'howitworks', 'contact',
+      'features', 'multicloud', 'trust', 'solutions', 'roi', 'howitworks', 'contact',
     ];
 
     // The raw scroll event fires far more often than we can paint, and each run

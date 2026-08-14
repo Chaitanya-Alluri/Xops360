@@ -13,7 +13,7 @@ const stats = [
 
 export default function TrustBar() {
   return (
-    <section className="py-8 md:py-10 px-4 md:px-6 bg-white border-b border-gray-100">
+    <section aria-label="Marketplace availability and key metrics" className="py-8 md:py-10 px-4 md:px-6 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-6 md:mb-8">
           <p className="text-xs md:text-sm font-medium text-gray-500 mb-4 uppercase tracking-wide">
@@ -42,7 +42,7 @@ export default function TrustBar() {
             );
           })}
         </Reveal>
-        <p className="text-[10px] md:text-[11px] text-gray-400 text-center mt-3">
+        <p className="text-[10px] md:text-[11px] text-gray-500 text-center mt-3">
           Figures reflect typical deployment outcomes; results vary by environment.
         </p>
       </div>

@@ -4,7 +4,7 @@ import { scrollToSection } from '../utils/scrollHelpers';
 
 export default function VideoSection() {
   return (
-    <section
+    <section aria-label="Product overview video"
       id="overview"
       className="relative py-14 md:py-20 px-4 md:px-6 bg-gradient-to-b from-slate-900 to-blue-950 overflow-hidden"
       style={{ scrollMarginTop: '80px' }}

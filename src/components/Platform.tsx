@@ -2,14 +2,14 @@ import AnimatedNumber from './AnimatedNumber';
 
 export default function Platform() {
   return (
-    <section
+    <section aria-label="Platform overview"
       id="platform"
       className="py-12 md:py-16 px-4 md:px-6 bg-white"
       style={{ scrollMarginTop: '80px' }}
     >
       <div className="max-w-6xl mx-auto text-center">
         <div className="inline-block px-4 py-1.5 bg-teal-50 rounded-full mb-3">
-          <p className="text-xs uppercase text-teal-600 font-semibold tracking-wide">
+          <p className="text-xs uppercase text-teal-700 font-semibold tracking-wide">
             MEET XOPS360
           </p>
         </div>
@@ -41,13 +41,13 @@ export default function Platform() {
                   <div className="flex items-center justify-between mb-2 md:mb-3">
                     <h3 className="text-xs md:text-sm font-semibold text-gray-600 uppercase">FinOps</h3>
                     <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-blue-600 font-bold text-base md:text-lg">$</span>
+                      <span className="text-blue-700 font-bold text-base md:text-lg">$</span>
                     </div>
                   </div>
                   <p className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1 md:mb-2">
                     $<AnimatedNumber value={847} className="inline-block" />K
                   </p>
-                  <p className="text-xs md:text-sm text-green-600 font-semibold">
+                  <p className="text-xs md:text-sm text-green-700 font-semibold">
                     <AnimatedNumber value={22} suffix="%" prefix="-" className="inline-block" /> Optimized
                   </p>
                 </div>
@@ -56,13 +56,13 @@ export default function Platform() {
                   <div className="flex items-center justify-between mb-2 md:mb-3">
                     <h3 className="text-xs md:text-sm font-semibold text-gray-600 uppercase">SecOps</h3>
                     <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-red-600 font-bold text-base md:text-lg">!</span>
+                      <span className="text-red-700 font-bold text-base md:text-lg">!</span>
                     </div>
                   </div>
                   <p className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1 md:mb-2">
                     <AnimatedNumber value={3} className="inline-block" /> Critical
                   </p>
-                  <p className="text-xs md:text-sm text-orange-600 font-semibold">
+                  <p className="text-xs md:text-sm text-orange-700 font-semibold">
                     <AnimatedNumber value={12} className="inline-block" /> Medium Risks
                   </p>
                 </div>
@@ -71,26 +71,26 @@ export default function Platform() {
                   <div className="flex items-center justify-between mb-2 md:mb-3">
                     <h3 className="text-xs md:text-sm font-semibold text-gray-600 uppercase">Compliance</h3>
                     <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-green-600 font-bold text-base md:text-lg">&#10003;</span>
+                      <span className="text-green-700 font-bold text-base md:text-lg">&#10003;</span>
                     </div>
                   </div>
                   <p className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1 md:mb-2">
                     <AnimatedNumber value={100} suffix="%" className="inline-block" />
                   </p>
-                  <p className="text-xs md:text-sm text-green-600 font-semibold">Audit Ready</p>
+                  <p className="text-xs md:text-sm text-green-700 font-semibold">Audit Ready</p>
                 </div>
 
                 <div className="bg-white rounded-lg md:rounded-xl p-4 md:p-5 lg:p-6 shadow-md border border-gray-200">
                   <div className="flex items-center justify-between mb-2 md:mb-3">
                     <h3 className="text-xs md:text-sm font-semibold text-gray-600 uppercase">Xhub</h3>
                     <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-cyan-600 font-bold text-base md:text-lg">AI</span>
+                      <span className="text-cyan-700 font-bold text-base md:text-lg">AI</span>
                     </div>
                   </div>
                   <p className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1 md:mb-2">
                     <AnimatedNumber value={47} className="inline-block" />
                   </p>
-                  <p className="text-xs md:text-sm text-cyan-600 font-semibold">One-click fixes</p>
+                  <p className="text-xs md:text-sm text-cyan-700 font-semibold">One-click fixes</p>
                 </div>
               </div>
 

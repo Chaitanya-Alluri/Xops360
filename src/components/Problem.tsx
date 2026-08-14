@@ -44,6 +44,7 @@ export default function Problem() {
   return (
     <section
       id="challenge"
+      aria-label="The challenge we solve"
       className="py-12 md:py-16 px-4 md:px-6 bg-gray-50"
       style={{ scrollMarginTop: '80px' }}
     >

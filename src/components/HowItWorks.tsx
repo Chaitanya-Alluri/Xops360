@@ -37,7 +37,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section
+    <section aria-label="How Xops360 works"
       id="howitworks"
       className="py-12 md:py-16 px-4 md:px-6 bg-white"
       style={{ scrollMarginTop: '80px' }}

@@ -10,6 +10,7 @@ export default function Footer() {
     { label: 'Supply-Chain Security', section: 'supplychain' },
     { label: 'Xhub Remediation', section: 'remediation' },
     { label: 'Multi-Cloud Coverage', section: 'multicloud' },
+    { label: 'Security & Governance', section: 'trust' },
   ];
 
   const companyLinks = [
@@ -89,7 +90,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 my-6 md:my-7"></div>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
-          <p className="text-xs md:text-sm text-gray-500">
+          <p className="text-xs md:text-sm text-gray-400">
             © {new Date().getFullYear()} AxiomIO. All rights reserved.
           </p>
 

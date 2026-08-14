@@ -4,7 +4,7 @@ import { scrollToSection } from '../utils/scrollHelpers';
 
 export default function Hero() {
   return (
-    <section
+    <section aria-label="Introduction"
       id="hero"
       className="relative pt-24 pb-12 md:pt-28 md:pb-16 px-4 md:px-6 overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white"
       style={{ scrollMarginTop: '80px' }}
@@ -18,8 +18,8 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
           <div className="text-center lg:text-left fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal-50 rounded-full mb-4 border border-teal-100">
-              <Sparkles size={13} className="text-teal-600" />
-              <p className="text-xs font-semibold text-teal-600 uppercase tracking-wide">
+              <Sparkles size={13} className="text-teal-700" />
+              <p className="text-xs font-semibold text-teal-700 uppercase tracking-wide">
                 AI-Powered Multi-Cloud Governance
               </p>
             </div>
@@ -122,7 +122,7 @@ export default function Hero() {
                           <AnimatedNumber value={847230} prefix="$" className="inline-block" />
                         </p>
                       </div>
-                      <div className="flex items-center gap-1 text-sm md:text-base text-green-600 font-semibold">
+                      <div className="flex items-center gap-1 text-sm md:text-base text-green-700 font-semibold">
                         <TrendingDown size={16} />
                         <AnimatedNumber value={22} suffix="%" prefix="-" className="inline-block" />
                       </div>
@@ -131,15 +131,15 @@ export default function Hero() {
                     <div className="grid grid-cols-2 gap-3 md:gap-3.5">
                       <div className="p-3 md:p-4 bg-red-50 rounded-lg">
                         <p className="text-xs text-gray-600 mb-1">Critical Risks</p>
-                        <p className="text-lg md:text-xl font-bold text-red-600">
+                        <p className="text-lg md:text-xl font-bold text-red-700">
                           <AnimatedNumber value={3} className="inline-block" />
                         </p>
                       </div>
                       <div className="p-3 md:p-4 bg-green-50 rounded-lg">
                         <p className="text-xs text-gray-600 mb-1 flex items-center gap-1">
-                          <ShieldCheck size={12} className="text-green-600" /> Compliance
+                          <ShieldCheck size={12} className="text-green-700" /> Compliance
                         </p>
-                        <p className="text-lg md:text-xl font-bold text-green-600">
+                        <p className="text-lg md:text-xl font-bold text-green-700">
                           <AnimatedNumber value={98} suffix="%" className="inline-block" />
                         </p>
                       </div>

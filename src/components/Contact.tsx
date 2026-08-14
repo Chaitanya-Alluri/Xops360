@@ -29,7 +29,7 @@ export default function Contact() {
   ];
 
   return (
-    <section
+    <section aria-label="Contact and demo request"
       id="contact"
       className="py-12 md:py-16 lg:py-20 px-4 md:px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900"
       style={{ scrollMarginTop: '80px' }}

@@ -13,6 +13,7 @@ export default function RoiCalculator() {
   return (
     <section
       id="roi"
+      aria-label="Savings calculator"
       className="py-12 md:py-16 px-4 md:px-6 bg-gray-50"
       style={{ scrollMarginTop: '80px' }}
     >
@@ -40,7 +41,7 @@ export default function RoiCalculator() {
                 </label>
                 <p className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
                   ${formatUSD(monthly)}
-                  <span className="text-base font-medium text-gray-400"> /mo</span>
+                  <span className="text-base font-medium text-gray-500"> /mo</span>
                 </p>
                 <input
                   id="monthly-spend"
@@ -53,7 +54,7 @@ export default function RoiCalculator() {
                   className="w-full h-2 rounded-full appearance-none cursor-pointer bg-gradient-to-r from-blue-800 to-teal-700 accent-blue-600"
                   aria-label="Monthly cloud spend"
                 />
-                <div className="flex justify-between text-[11px] text-gray-400 mt-2">
+                <div className="flex justify-between text-[11px] text-gray-500 mt-2">
                   <span>$10K</span>
                   <span>$1M</span>
                 </div>
